@@ -26,3 +26,4 @@ sudo systemctl daemon-reload && sudo systemctl restart docker
 
 echo "NVIDIA Docker configuration complete."
 echo "You may need to log out and back in for the group changes to take effect."
+exit 0
