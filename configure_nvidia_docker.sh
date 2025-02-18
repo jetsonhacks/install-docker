@@ -14,10 +14,9 @@ sudo usermod -aG docker $USER
 sudo apt install -y jq
 
 # Configure Docker daemon to use nvidia as the default runtime.
-sudo jq -f /etc/docker/daemon.json '. + {"default-runtime": "nvidia"}' | \
-    sudo tee /etc/docker/daemon.json.tmp && \
-    sudo mv /etc/docker/daemon.json.tmp /etc/docker/daemon.json
-
+sudo jq '. + {"default-runtime": "nvidia"}' <<< "$(cat /etc/docker/daemon.json)" | \
+    sudo tee /etc/docker/daemon.json
+    
 # Reload the Docker daemon and restart Docker to apply the default runtime configuration.
 sudo systemctl daemon-reload && sudo systemctl restart docker
 
