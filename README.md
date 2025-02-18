@@ -9,7 +9,7 @@ These scripts install Docker on the rootfs, and are meant for systems that run f
 ## Core Installation
  Install nv-container and Docker on the rootfs
  ```bash
- sudo bash ./install_nvidia_docker_core.sh
+ sudo bash ./install_nvidia_docker.sh
  ```
 
 ## Configuration
