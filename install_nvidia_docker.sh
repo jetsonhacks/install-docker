@@ -40,3 +40,4 @@ sudo systemctl --now enable docker
 sudo nvidia-ctk runtime configure --runtime=docker
 
 echo "NVIDIA Docker installation complete."
+exit 0
