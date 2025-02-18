@@ -10,9 +10,6 @@ set -e
 # Add the current user to the docker group (important for non-root Docker usage).
 sudo usermod -aG docker $USER
 
-# Apply group changes for the current user (you might need to log out and back in, or run 'newgrp docker').
-newgrp docker
-
 # Install jq for JSON manipulation.
 sudo apt install -y jq
 
@@ -25,5 +22,5 @@ sudo jq -f /etc/docker/daemon.json '. + {"default-runtime": "nvidia"}' | \
 sudo systemctl daemon-reload && sudo systemctl restart docker
 
 echo "NVIDIA Docker configuration complete."
-echo "You may need to log out and back in for the group changes to take effect."
+echo "Log out and back in for the group changes to take effect."
 exit 0
