@@ -7,15 +7,15 @@ These scripts install Docker on the rootfs, and are meant for systems that run f
 
 
 ## Core Installation
- Install nv-container and Docker on the rootfs
- ```bash
- sudo bash ./install_nvidia_docker.sh
- ```
+Install nv-container and Docker on the rootfs
+```bash
+bash ./install_nvidia_docker.sh
+```
 
 ## Configuration
 Configure the Jetson to run Docker and take advantage of NVIDIA runtime
 ```bash
-sudo bash ./configure_nvidia_docker.sh
+bash ./configure_nvidia_docker.sh
 ```
 
 ## Release Notes
