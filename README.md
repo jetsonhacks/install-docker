@@ -21,5 +21,6 @@ bash ./configure_nvidia_docker.sh
 ## Release Notes
 ### February 2025
 * Initial Release
+* Tested on NVIDIA Jetson Orin Nano Super Developer Kit
 
 Modified scripts from: [Jetson AI Lab - Tips - SSD + Docker](https://www.jetson-ai-lab.com/tips_ssd-docker.html)
