@@ -20,13 +20,14 @@ bash ./configure_nvidia_docker.sh
 
 ## Release Notes
 ### February 22, 2025
-An issue with Docker 28.0.0 (released 2/20/2025) requires changes to the kernel:
+An issue with Docker 28.0.0 (released 2/20/2025) requires changes to the kernel which are not implemented in the current Jetson 6.2 release:
 ```
 CONFIG_IP_SET=m
 CONFIG_IP_SET_HASH_NET=m
 CONFIG_NETFILTER_XT_SET=m
 ```
 The install_nvidia_docker.sh script incorporates the current work around which is to downgrade to Docker 27.5.1. Also, Docker is marked hold so that apt upgrade doesn't inadvertently upgrade the package.
+Apparently the settings are forward in the Ubuntu 24.04, and are not implemented in the Jetson 22.04 derived OS.
   
 ### February 2025
 * Initial Release
