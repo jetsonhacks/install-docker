@@ -17,6 +17,13 @@ Configure the Jetson to run Docker and take advantage of NVIDIA runtime
 ```bash
 bash ./configure_nvidia_docker.sh
 ```
+## Downgrade Docker
+An issue with Docker 28.0.0 (released 2/20/2025) requires changes to the kernel which are not implemented in the current Jetson 6.2 release. If you have Docker installed, and after an apt upgrade the Docker daemon will not run, you can downgrade to Docker 27.5.1 using the downgrade_docker.sh script:
+```
+bash ./downgrade_docker.sh
+```
+Docker is downgraded to 27.5.1 and the packages are marked hold so that apt upgrade will not upgrade them automatically.
+
 
 ## Release Notes
 ### February 22, 2025
