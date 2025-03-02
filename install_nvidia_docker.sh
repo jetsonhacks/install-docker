@@ -31,6 +31,22 @@ chmod +x docker_install.sh
 # Install Docker.
 sudo ./docker_install.sh
 
+# An issue with the current Docker 28.0.0 requires a different set of kernel modules to be enabled.
+# The JetPack 6.2 release of Jetson doesn't support these. So we downgrade
+sudo apt-get install -y docker-ce=5:27.5.1-1~ubuntu.22.04~jammy --allow-downgrades
+sudo apt-get install -y docker-ce-cli=5:27.5.1-1~ubuntu.22.04~jammy --allow-downgrades
+sudo apt-get install -y docker-compose-plugin=2.32.4-1~ubuntu.22.04~jammy --allow-downgrades
+sudo apt-get install -y docker-buildx-plugin=0.20.0-1~ubuntu.22.04~jammy --allow-downgrades
+sudo apt-get install -y docker-ce-rootless-extras=5:27.5.1-1~ubuntu.22.04~jammy --allow-downgrades
+
+
+# The we mark them held so they do not get upgraded with apt upgrade
+sudo apt-mark hold docker-ce=5:27.5.1-1~ubuntu.22.04~jammy
+sudo apt-mark hold docker-ce-cli=5:27.5.1-1~ubuntu.22.04~jammy
+sudo apt-mark hold docker-compose-plugin=2.32.4-1~ubuntu.22.04~jammy
+sudo apt-mark hold docker-buildx-plugin=0.20.0-1~ubuntu.22.04~jammy
+sudo apt-mark hold docker-ce-rootless-extras=5:27.5.1-1~ubuntu.22.04~jammy
+
 rm docker_install.sh
 
 # Enable and start the Docker service.
