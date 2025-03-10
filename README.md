@@ -21,7 +21,7 @@ bash ./configure_nvidia_docker.sh
 ## Unhold and Upgrade Docker
 **Important: It is not currently safe to perform this.** The Docker 28.0.0 release broke Docker on Jetson because of a dependency on kernel modules ip_set, ip_set_hash_net and netfilter_xt_set which are not set in the default Jetson kernel. The work around is to downgrade the Docker files to 27.5.1 and mark them as 'hold' so that they would not be updated when performing an apt upgrade. If you installed Docker using these scripts previously and the Docker packages were downgraded and held, you can undo the hold and upgrade using this script: 
 ```
-bash ./unhold_and_upgrade.sh
+bash unhold_and_upgrade_docker.sh
 ```
 which will 'mark unhold' the held packages and upgrade them.
 
