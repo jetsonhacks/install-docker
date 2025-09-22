@@ -34,6 +34,9 @@ Docker is downgraded to 27.5.1 and the packages are marked hold so that apt upgr
 
 
 ## Release Notes
+### September 21, 2025
+JetPack 6.2.1 fixes the iptable issue. Removed downgrade from the install_docker script.
+
 ### March 1, 2025
 Docker release 28.0.1 still has significant issues on Jetson. The install scripts downgrade back to 27.5.1 again.
 
